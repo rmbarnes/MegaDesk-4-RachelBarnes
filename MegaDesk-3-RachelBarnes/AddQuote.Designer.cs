@@ -42,13 +42,12 @@
             this.drawersLabel = new System.Windows.Forms.Label();
             this.drawersBox = new System.Windows.Forms.NumericUpDown();
             this.rushOrderLabel = new System.Windows.Forms.Label();
-            this.threeDaysButton = new System.Windows.Forms.RadioButton();
-            this.fiveDayButton = new System.Windows.Forms.RadioButton();
-            this.sevenDayButton = new System.Windows.Forms.RadioButton();
             this.widthDescription = new System.Windows.Forms.Label();
             this.depthDescription = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.mainMenuButton = new System.Windows.Forms.Button();
+            this.rushOrderBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.widthBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawersBox)).BeginInit();
@@ -64,6 +63,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(167, 101);
@@ -153,6 +153,7 @@
             0,
             0,
             0});
+            this.widthBox.ValueChanged += new System.EventHandler(this.widthBox_ValueChanged);
             // 
             // depthBox
             // 
@@ -181,17 +182,12 @@
             // 
             this.surfaceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surfaceBox.FormattingEnabled = true;
-            this.surfaceBox.Items.AddRange(new object[] {
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.surfaceBox.Location = new System.Drawing.Point(167, 277);
             this.surfaceBox.Name = "surfaceBox";
             this.surfaceBox.Size = new System.Drawing.Size(121, 26);
             this.surfaceBox.TabIndex = 10;
             this.surfaceBox.Text = "Select...";
+            this.surfaceBox.SelectedIndexChanged += new System.EventHandler(this.surfaceBox_SelectedIndexChanged);
             // 
             // drawersLabel
             // 
@@ -225,41 +221,6 @@
             this.rushOrderLabel.Size = new System.Drawing.Size(89, 18);
             this.rushOrderLabel.TabIndex = 13;
             this.rushOrderLabel.Text = "Rush Order:";
-            // 
-            // threeDaysButton
-            // 
-            this.threeDaysButton.AutoSize = true;
-            this.threeDaysButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.threeDaysButton.Location = new System.Drawing.Point(167, 327);
-            this.threeDaysButton.Name = "threeDaysButton";
-            this.threeDaysButton.Size = new System.Drawing.Size(60, 19);
-            this.threeDaysButton.TabIndex = 14;
-            this.threeDaysButton.TabStop = true;
-            this.threeDaysButton.Text = "3 days";
-            this.threeDaysButton.UseVisualStyleBackColor = true;
-            // 
-            // fiveDayButton
-            // 
-            this.fiveDayButton.AutoSize = true;
-            this.fiveDayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fiveDayButton.Location = new System.Drawing.Point(244, 327);
-            this.fiveDayButton.Name = "fiveDayButton";
-            this.fiveDayButton.Size = new System.Drawing.Size(60, 19);
-            this.fiveDayButton.TabIndex = 15;
-            this.fiveDayButton.TabStop = true;
-            this.fiveDayButton.Text = "5 days";
-            this.fiveDayButton.UseVisualStyleBackColor = true;
-            // 
-            // sevenDayButton
-            // 
-            this.sevenDayButton.AutoSize = true;
-            this.sevenDayButton.Location = new System.Drawing.Point(322, 329);
-            this.sevenDayButton.Name = "sevenDayButton";
-            this.sevenDayButton.Size = new System.Drawing.Size(56, 17);
-            this.sevenDayButton.TabIndex = 16;
-            this.sevenDayButton.TabStop = true;
-            this.sevenDayButton.Text = "7 days";
-            this.sevenDayButton.UseVisualStyleBackColor = true;
             // 
             // widthDescription
             // 
@@ -301,18 +262,37 @@
             this.mainMenuButton.UseVisualStyleBackColor = true;
             this.mainMenuButton.Click += new System.EventHandler(this.mainMenuButton_Click);
             // 
+            // rushOrderBox
+            // 
+            this.rushOrderBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rushOrderBox.FormattingEnabled = true;
+            this.rushOrderBox.Location = new System.Drawing.Point(167, 324);
+            this.rushOrderBox.Name = "rushOrderBox";
+            this.rushOrderBox.Size = new System.Drawing.Size(121, 26);
+            this.rushOrderBox.TabIndex = 21;
+            this.rushOrderBox.Text = "Select...";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(294, 327);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 18);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "(days)";
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 411);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rushOrderBox);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.depthDescription);
             this.Controls.Add(this.widthDescription);
-            this.Controls.Add(this.sevenDayButton);
-            this.Controls.Add(this.fiveDayButton);
-            this.Controls.Add(this.threeDaysButton);
             this.Controls.Add(this.rushOrderLabel);
             this.Controls.Add(this.drawersBox);
             this.Controls.Add(this.drawersLabel);
@@ -353,12 +333,11 @@
         private System.Windows.Forms.Label drawersLabel;
         private System.Windows.Forms.NumericUpDown drawersBox;
         private System.Windows.Forms.Label rushOrderLabel;
-        private System.Windows.Forms.RadioButton threeDaysButton;
-        private System.Windows.Forms.RadioButton fiveDayButton;
-        private System.Windows.Forms.RadioButton sevenDayButton;
         private System.Windows.Forms.Label widthDescription;
         private System.Windows.Forms.Label depthDescription;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button mainMenuButton;
+        private System.Windows.Forms.ComboBox rushOrderBox;
+        private System.Windows.Forms.Label label1;
     }
 }

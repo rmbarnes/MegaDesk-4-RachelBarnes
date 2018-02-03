@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_3_RachelBarnes
 {
-    class Desk
+    public class Desk
     {
-        public int Width { get; set; }
-        public int Depth { get; set; }
-        public int Drawers { get; set; }
-        public enum SurfaceType { Oak, Laminate, Pine, Rosewood, Veneer }
-        public static void GetSurfaceArea()
-        { 
-
+        public enum SurfaceType
+        {
+            Oak,
+            Laminate,
+            Pine,
+            Rosewood,
+            Veneer
         }
+        public decimal Width { get; set; }
+        public decimal Depth { get; set; }
+        public decimal Drawers { get; set; }
+        public SurfaceType SurfaceMaterial { get; set; }
+        
 
     }
 

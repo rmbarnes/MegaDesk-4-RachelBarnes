@@ -129,6 +129,7 @@
             this.customerName.ReadOnly = true;
             this.customerName.Size = new System.Drawing.Size(202, 24);
             this.customerName.TabIndex = 49;
+            this.customerName.TextChanged += new System.EventHandler(this.customerName_TextChanged);
             // 
             // rushOrderLabel
             // 

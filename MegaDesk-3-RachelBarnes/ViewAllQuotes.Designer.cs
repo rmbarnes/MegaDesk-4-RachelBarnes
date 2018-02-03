@@ -30,13 +30,23 @@
         {
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.viewQuoteLabel = new System.Windows.Forms.Label();
-            this.viewQuoteBox = new System.Windows.Forms.TextBox();
+            this.viewQuoteGrid = new System.Windows.Forms.DataGridView();
+            this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rushOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surfaceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.displayError = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.viewQuoteGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenuButton
             // 
             this.mainMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainMenuButton.Location = new System.Drawing.Point(139, 348);
+            this.mainMenuButton.Location = new System.Drawing.Point(249, 349);
             this.mainMenuButton.Name = "mainMenuButton";
             this.mainMenuButton.Size = new System.Drawing.Size(161, 26);
             this.mainMenuButton.TabIndex = 22;
@@ -48,30 +58,98 @@
             // 
             this.viewQuoteLabel.AutoSize = true;
             this.viewQuoteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewQuoteLabel.Location = new System.Drawing.Point(163, 31);
+            this.viewQuoteLabel.Location = new System.Drawing.Point(272, 32);
             this.viewQuoteLabel.Name = "viewQuoteLabel";
             this.viewQuoteLabel.Size = new System.Drawing.Size(113, 22);
             this.viewQuoteLabel.TabIndex = 24;
             this.viewQuoteLabel.Text = "View Quote";
             // 
-            // viewQuoteBox
+            // viewQuoteGrid
             // 
-            this.viewQuoteBox.Location = new System.Drawing.Point(38, 84);
-            this.viewQuoteBox.Name = "viewQuoteBox";
-            this.viewQuoteBox.ReadOnly = true;
-            this.viewQuoteBox.Size = new System.Drawing.Size(352, 20);
-            this.viewQuoteBox.TabIndex = 25;
+            this.viewQuoteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewQuoteGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customer,
+            this.date,
+            this.width,
+            this.depth,
+            this.drawer,
+            this.rushOrder,
+            this.surfaceType,
+            this.price});
+            this.viewQuoteGrid.Location = new System.Drawing.Point(12, 70);
+            this.viewQuoteGrid.Name = "viewQuoteGrid";
+            this.viewQuoteGrid.Size = new System.Drawing.Size(623, 188);
+            this.viewQuoteGrid.TabIndex = 25;
+            this.viewQuoteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewQuoteGrid_CellContentClick);
+            // 
+            // customer
+            // 
+            this.customer.HeaderText = "Customer";
+            this.customer.Name = "customer";
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.Width = 70;
+            // 
+            // width
+            // 
+            this.width.HeaderText = "Width";
+            this.width.Name = "width";
+            this.width.Width = 60;
+            // 
+            // depth
+            // 
+            this.depth.HeaderText = "Depth";
+            this.depth.Name = "depth";
+            this.depth.Width = 60;
+            // 
+            // drawer
+            // 
+            this.drawer.HeaderText = "Number of Drawers";
+            this.drawer.Name = "drawer";
+            this.drawer.Width = 60;
+            // 
+            // rushOrder
+            // 
+            this.rushOrder.HeaderText = "Rush Order Days";
+            this.rushOrder.Name = "rushOrder";
+            this.rushOrder.Width = 60;
+            // 
+            // surfaceType
+            // 
+            this.surfaceType.HeaderText = "Surface Type";
+            this.surfaceType.Name = "surfaceType";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.Width = 70;
+            // 
+            // displayError
+            // 
+            this.displayError.AutoSize = true;
+            this.displayError.Location = new System.Drawing.Point(12, 54);
+            this.displayError.Name = "displayError";
+            this.displayError.Size = new System.Drawing.Size(35, 13);
+            this.displayError.TabIndex = 26;
+            this.displayError.Text = "label1";
+            this.displayError.Visible = false;
             // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 411);
-            this.Controls.Add(this.viewQuoteBox);
+            this.ClientSize = new System.Drawing.Size(650, 411);
+            this.Controls.Add(this.displayError);
+            this.Controls.Add(this.viewQuoteGrid);
             this.Controls.Add(this.viewQuoteLabel);
             this.Controls.Add(this.mainMenuButton);
             this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
+            ((System.ComponentModel.ISupportInitialize)(this.viewQuoteGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +159,15 @@
 
         private System.Windows.Forms.Button mainMenuButton;
         private System.Windows.Forms.Label viewQuoteLabel;
-        private System.Windows.Forms.TextBox viewQuoteBox;
+        private System.Windows.Forms.DataGridView viewQuoteGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn width;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drawer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rushOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surfaceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.Label displayError;
     }
 }

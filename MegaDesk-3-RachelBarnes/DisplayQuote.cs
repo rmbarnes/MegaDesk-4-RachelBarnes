@@ -12,9 +12,18 @@ namespace MegaDesk_3_RachelBarnes
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        public DisplayQuote(DeskQuote newQuote)
         {
             InitializeComponent();
+            customerName.Text = newQuote.CustomerName;
+            quoteDate.Text = newQuote.Date.ToString("d MMMM yyyy");
+
+            quoteWidth.Text = newQuote.CustomerDesk.Width.ToString();
+            quoteDepth.Text = newQuote.CustomerDesk.Depth.ToString();
+            quoteDrawers.Text = newQuote.CustomerDesk.Drawers.ToString();
+            quoteSurface.Text = newQuote.CustomerDesk.SurfaceMaterial.ToString();
+            quoteRushOrder.Text = newQuote.RushOrderTime.ToString();
+            priceBox.Text = newQuote.CalculateQuote(newQuote).ToString();
         }
 
         private void mainMenuButton_Click(object sender, EventArgs e)
@@ -22,6 +31,11 @@ namespace MegaDesk_3_RachelBarnes
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
             Close();
+        }
+
+        private void customerName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
