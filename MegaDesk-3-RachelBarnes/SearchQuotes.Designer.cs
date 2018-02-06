@@ -32,16 +32,16 @@
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.viewQuoteLabel = new System.Windows.Forms.Label();
             this.viewQuoteGrid = new System.Windows.Forms.DataGridView();
+            this.displayError = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.width = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.depth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rushOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surfaceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rushOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.displayError = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewQuoteGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,14 +91,34 @@
             this.width,
             this.depth,
             this.drawer,
-            this.rushOrder,
             this.surfaceType,
+            this.rushOrder,
             this.price});
             this.viewQuoteGrid.Location = new System.Drawing.Point(12, 122);
             this.viewQuoteGrid.Name = "viewQuoteGrid";
             this.viewQuoteGrid.RowHeadersWidth = 40;
             this.viewQuoteGrid.Size = new System.Drawing.Size(623, 188);
             this.viewQuoteGrid.TabIndex = 26;
+            // 
+            // displayError
+            // 
+            this.displayError.AutoSize = true;
+            this.displayError.Location = new System.Drawing.Point(12, 106);
+            this.displayError.Name = "displayError";
+            this.displayError.Size = new System.Drawing.Size(35, 13);
+            this.displayError.TabIndex = 27;
+            this.displayError.Text = "label1";
+            this.displayError.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(451, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // customer
             // 
@@ -129,42 +149,22 @@
             this.drawer.Name = "drawer";
             this.drawer.Width = 60;
             // 
+            // surfaceType
+            // 
+            this.surfaceType.HeaderText = "Surface Type";
+            this.surfaceType.Name = "surfaceType";
+            // 
             // rushOrder
             // 
             this.rushOrder.HeaderText = "Rush Order Days";
             this.rushOrder.Name = "rushOrder";
             this.rushOrder.Width = 60;
             // 
-            // surfaceType
-            // 
-            this.surfaceType.HeaderText = "Surface Type";
-            this.surfaceType.Name = "surfaceType";
-            // 
             // price
             // 
             this.price.HeaderText = "Price";
             this.price.Name = "price";
             this.price.Width = 70;
-            // 
-            // displayError
-            // 
-            this.displayError.AutoSize = true;
-            this.displayError.Location = new System.Drawing.Point(12, 106);
-            this.displayError.Name = "displayError";
-            this.displayError.Size = new System.Drawing.Size(35, 13);
-            this.displayError.TabIndex = 27;
-            this.displayError.Text = "label1";
-            this.displayError.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(451, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SearchQuotes
             // 
@@ -191,15 +191,15 @@
         private System.Windows.Forms.Button mainMenuButton;
         private System.Windows.Forms.Label viewQuoteLabel;
         private System.Windows.Forms.DataGridView viewQuoteGrid;
+        private System.Windows.Forms.Label displayError;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn width;
         private System.Windows.Forms.DataGridViewTextBoxColumn depth;
         private System.Windows.Forms.DataGridViewTextBoxColumn drawer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rushOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn surfaceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rushOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.Label displayError;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -32,7 +32,11 @@ namespace MegaDesk_3_RachelBarnes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string path = "quote.txt";
+
+            viewQuoteGrid.Rows.Clear();
+
             try
             {
                 using (StreamReader myStream = new StreamReader(path))

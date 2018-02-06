@@ -26,7 +26,10 @@ namespace MegaDesk_3_RachelBarnes
                     while (!myStream.EndOfStream)
                     {
                         String[] quotes = myStream.ReadLine().Split(',');
-                        viewQuoteGrid.Rows.Add(quotes[0], quotes[1], quotes[2], quotes[3], quotes[4], quotes[5], quotes[6], quotes[7]);
+                        viewQuoteGrid.Rows.Add(quotes[0], quotes[1], 
+                                                quotes[2], quotes[3], 
+                                                quotes[4], quotes[5], 
+                                                quotes[6], quotes[7]);
 
                     }
 
